@@ -1,4 +1,4 @@
-# Virtual Travel Experience 🌎
+# Virtual Passport🌎
 
 A dynamic web application that lets users explore countries around the world through an interactive virtual passport system. Built with React, TypeScript, and Three.js.
 
