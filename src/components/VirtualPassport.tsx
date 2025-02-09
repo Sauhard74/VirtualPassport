@@ -3,6 +3,7 @@ import { useStore } from '../store/useStore';
 import { format } from 'date-fns';
 import { Stamp, ArrowLeft, Globe, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import './VirtualPassport.css';
 
 export function VirtualPassport() {
   const { savedTrips } = useStore();
@@ -69,11 +70,16 @@ export function VirtualPassport() {
         <div className="max-w-[375px] mx-auto perspective-1000">
           <div className="book-container" onClick={handleToggleBook}>
             <div className={`passport-cover ${isOpen ? 'open' : ''}`}>
-              <div className="text-center space-y-4 p-8">
-                <Globe className="w-12 h-12 mx-auto text-gold" />
-                <div className="emblem" />
-                <h1 className="text-xl font-serif text-gold uppercase tracking-widest">Virtual Passport</h1>
-                <div className="text-gold/80 font-serif text-sm">
+              <div className="text-center space-y-8 p-12">
+                <Globe className="w-16 h-16 mx-auto text-gold mb-8" />
+                <div className="emblem mb-10">
+                  <div className="emblem-inner">
+                    <div className="emblem-circle"></div>
+                    <div className="emblem-star"></div>
+                  </div>
+                </div>
+                <h1 className="text-2xl font-serif text-gold uppercase tracking-widest mb-8">Virtual Passport</h1>
+                <div className="text-gold/80 font-serif text-base space-y-2">
                   <div>World Explorer</div>
                   <div>Digital Citizenship</div>
                 </div>
