@@ -37,4 +37,53 @@
   );
   background-color: #B8860B;
   opacity: 0.7;
+}
+
+.passport-page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  background: #f4f1e9;
+  box-shadow: 
+    inset -1px 0 2px rgba(0, 0, 0, 0.1),
+    0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 0 3px 3px 0;
+}
+
+.passport-page::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.05) 0%,
+    transparent 100%
+  );
+  transform-origin: left center;
+  z-index: 2;
+}
+
+.passport-page::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.passport-page.current {
+  z-index: 1;
+}
+
+.page-content {
+  padding: 2rem;
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
 } 

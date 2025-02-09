@@ -95,8 +95,10 @@ export function VirtualPassport() {
                       className={`passport-page ${currentPage === index ? 'current' : ''}`}
                       style={{ 
                         transform: `rotateY(${(index - currentPage) * 180}deg)`,
-                        opacity: currentPage === index ? 1 : 0,
-                        visibility: Math.abs(index - currentPage) <= 1 ? 'visible' : 'hidden'
+                        transformOrigin: 'left center',
+                        opacity: Math.abs(index - currentPage) <= 1 ? 1 : 0,
+                        visibility: Math.abs(index - currentPage) <= 1 ? 'visible' : 'hidden',
+                        transition: 'transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1.000), opacity 0.4s'
                       }}
                     >
                       <div className="page-content">
