@@ -12,31 +12,83 @@ export async function getRandomCountry(): Promise<Country> {
 }
 
 export async function getCountryImages(countryName: string) {
+  // Static travel images that are guaranteed to work
   const defaultImages = [
-    'https://images.pexels.com/photos/1796730/pexels-photo-1796730.jpeg',    // Eiffel Tower
-    'https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg',      // Mountains
-    'https://images.pexels.com/photos/1485894/pexels-photo-1485894.jpeg',    // Beach
-    'https://images.pexels.com/photos/427679/pexels-photo-427679.jpeg',      // City
-    'https://images.pexels.com/photos/2440021/pexels-photo-2440021.jpeg',    // Temple
-    'https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg',    // Desert
-    'https://images.pexels.com/photos/2440024/pexels-photo-2440024.jpeg',    // Lake
-    'https://images.pexels.com/photos/2563681/pexels-photo-2563681.jpeg',    // Waterfall
-    'https://images.pexels.com/photos/2325446/pexels-photo-2325446.jpeg'     // Village
+    {
+      id: 1,
+      urls: {
+        small: 'https://images.unsplash.com/photo-1500835556837-99ac94a94552',
+        regular: 'https://images.unsplash.com/photo-1500835556837-99ac94a94552'
+      },
+      alt_description: 'Mountain landscape with clouds'
+    },
+    {
+      id: 2,
+      urls: {
+        small: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1',
+        regular: 'https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1'
+      },
+      alt_description: 'Cityscape during sunset'
+    },
+    {
+      id: 3,
+      urls: {
+        small: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34',
+        regular: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34'
+      },
+      alt_description: 'Historic architecture'
+    },
+    {
+      id: 4,
+      urls: {
+        small: 'https://images.unsplash.com/photo-1445019980597-93fa8acb246c',
+        regular: 'https://images.unsplash.com/photo-1445019980597-93fa8acb246c'
+      },
+      alt_description: 'Beach sunset view'
+    },
+    {
+      id: 5,
+      urls: {
+        small: 'https://images.unsplash.com/photo-1493246507139-91e8fad9978e',
+        regular: 'https://images.unsplash.com/photo-1493246507139-91e8fad9978e'
+      },
+      alt_description: 'Rural landscape'
+    },
+    {
+      id: 6,
+      urls: {
+        small: 'https://images.unsplash.com/photo-1519451241324-20b4ea2c4220',
+        regular: 'https://images.unsplash.com/photo-1519451241324-20b4ea2c4220'
+      },
+      alt_description: 'Cultural festival'
+    },
+    {
+      id: 7,
+      urls: {
+        small: 'https://images.unsplash.com/photo-1488747279002-c8523379faaa',
+        regular: 'https://images.unsplash.com/photo-1488747279002-c8523379faaa'
+      },
+      alt_description: 'Local market'
+    },
+    {
+      id: 8,
+      urls: {
+        small: 'https://images.unsplash.com/photo-1465778893808-9b3d1b443be4',
+        regular: 'https://images.unsplash.com/photo-1465778893808-9b3d1b443be4'
+      },
+      alt_description: 'Natural waterfall'
+    },
+    {
+      id: 9,
+      urls: {
+        small: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df',
+        regular: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df'
+      },
+      alt_description: 'City skyline at night'
+    }
   ];
 
-  try {
-    return defaultImages.map((url, index) => ({
-      id: index,
-      urls: {
-        small: url,
-        regular: url
-      },
-      alt_description: `Travel destination ${index + 1}`
-    }));
-  } catch (error) {
-    console.error('Failed to load images:', error);
-    return [];
-  }
+  return defaultImages;
 }
 
 export async function translatePhrase(text: string, targetLang: string): Promise<string> {

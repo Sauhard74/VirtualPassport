@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useStore } from '../store/useStore';
-import { MapPin, Globe2, Book, MessageSquare, Trophy, Save, ArrowLeft, Calendar, Images } from 'lucide-react';
+import { MapPin, Globe2, Book, MessageSquare, Trophy, Save, ArrowLeft, Calendar } from 'lucide-react';
 import { Button } from './Button';
 import { Link, useNavigate } from 'react-router-dom';
 import type { CulturalFact, LanguageLesson, TravelTimeline } from '../types';
@@ -49,10 +49,13 @@ export function CountryExplorer() {
       })
       .finally(() => setLoading(prev => ({ ...prev, lessons: false })));
 
-    Images
+    // Images
     getCountryImages(currentCountry.name.common)
       .then(setImages)
-      .catch(console.error)
+      .catch(error => {
+        console.error('Failed to fetch images:', error);
+        setImages([]);
+      })
       .finally(() => setLoading(prev => ({ ...prev, images: false })));
 
     // Timeline
