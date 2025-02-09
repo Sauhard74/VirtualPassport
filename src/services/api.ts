@@ -13,15 +13,15 @@ export async function getRandomCountry(): Promise<Country> {
 
 export async function getCountryImages(countryName: string) {
   const defaultImages = [
-    'https://res.cloudinary.com/dqrqyutvq/image/upload/v1709818095/travel/santorini_greece_sunset_mz0zpf.jpg',
-    'https://res.cloudinary.com/dqrqyutvq/image/upload/v1709818095/travel/paris_eiffel_tower_night_kzqvbi.jpg',
-    'https://res.cloudinary.com/dqrqyutvq/image/upload/v1709818095/travel/dubai_skyline_sunset_qwm2fg.jpg',
-    'https://res.cloudinary.com/dqrqyutvq/image/upload/v1709818095/travel/venice_canal_gondola_sunset_yvuwfy.jpg',
-    'https://res.cloudinary.com/dqrqyutvq/image/upload/v1709818095/travel/swiss_alps_mountains_snow_nxgd4k.jpg',
-    'https://res.cloudinary.com/dqrqyutvq/image/upload/v1709818095/travel/bali_beach_sunset_palm_trees_ivhwdz.jpg',
-    'https://res.cloudinary.com/dqrqyutvq/image/upload/v1709818095/travel/tokyo_night_cityscape_neon_lights_p8qxvc.jpg',
-    'https://res.cloudinary.com/dqrqyutvq/image/upload/v1709818095/travel/grand_canyon_sunset_vista_point_rlmkdf.jpg',
-    'https://res.cloudinary.com/dqrqyutvq/image/upload/v1709818095/travel/machu_picchu_peru_ancient_ruins_fog_morning_kqwert.jpg'
+    'https://images.pexels.com/photos/1796730/pexels-photo-1796730.jpeg',    // Eiffel Tower
+    'https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg',      // Mountains
+    'https://images.pexels.com/photos/1485894/pexels-photo-1485894.jpeg',    // Beach
+    'https://images.pexels.com/photos/427679/pexels-photo-427679.jpeg',      // City
+    'https://images.pexels.com/photos/2440021/pexels-photo-2440021.jpeg',    // Temple
+    'https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg',    // Desert
+    'https://images.pexels.com/photos/2440024/pexels-photo-2440024.jpeg',    // Lake
+    'https://images.pexels.com/photos/2563681/pexels-photo-2563681.jpeg',    // Waterfall
+    'https://images.pexels.com/photos/2325446/pexels-photo-2325446.jpeg'     // Village
   ];
 
   try {
