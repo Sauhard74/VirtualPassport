@@ -45,9 +45,8 @@ function LandingPage() {
             </p>
           </div>
 
-          <div className="relative w-72 h-72 animate-float">
+          <div className="relative w-96 h-96 animate-float" style={{ background: 'transparent' }}>
             <Globe />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-transparent" />
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
