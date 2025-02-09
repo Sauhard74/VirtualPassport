@@ -11,36 +11,30 @@ export async function getRandomCountry(): Promise<Country> {
   return data[randomIndex];
 }
 
-export async function getCountryImages(countryName: string, capital: string) {
+export async function getCountryImages(countryName: string) {
+  const defaultImages = [
+    'https://res.cloudinary.com/dqrqyutvq/image/upload/v1709818095/travel/santorini_greece_sunset_mz0zpf.jpg',
+    'https://res.cloudinary.com/dqrqyutvq/image/upload/v1709818095/travel/paris_eiffel_tower_night_kzqvbi.jpg',
+    'https://res.cloudinary.com/dqrqyutvq/image/upload/v1709818095/travel/dubai_skyline_sunset_qwm2fg.jpg',
+    'https://res.cloudinary.com/dqrqyutvq/image/upload/v1709818095/travel/venice_canal_gondola_sunset_yvuwfy.jpg',
+    'https://res.cloudinary.com/dqrqyutvq/image/upload/v1709818095/travel/swiss_alps_mountains_snow_nxgd4k.jpg',
+    'https://res.cloudinary.com/dqrqyutvq/image/upload/v1709818095/travel/bali_beach_sunset_palm_trees_ivhwdz.jpg',
+    'https://res.cloudinary.com/dqrqyutvq/image/upload/v1709818095/travel/tokyo_night_cityscape_neon_lights_p8qxvc.jpg',
+    'https://res.cloudinary.com/dqrqyutvq/image/upload/v1709818095/travel/grand_canyon_sunset_vista_point_rlmkdf.jpg',
+    'https://res.cloudinary.com/dqrqyutvq/image/upload/v1709818095/travel/machu_picchu_peru_ancient_ruins_fog_morning_kqwert.jpg'
+  ];
+
   try {
-    const ROADGOAT_API_KEY = 'c66eff1f0f39e8c6a0d0878294ad5a2a';
-    const ROADGOAT_API_SECRET = '1f3c0d9c3f8e7b6a9d2c5f8e1a4b7d0e';
-    
-    const response = await fetch(
-      `https://api.roadgoat.com/api/v2/destinations/auto_complete?q=${encodeURIComponent(capital)}`,
-      {
-        headers: {
-          'Authorization': `Basic ${btoa(`${ROADGOAT_API_KEY}:${ROADGOAT_API_SECRET}`)}`,
-          'Content-Type': 'application/json'
-        }
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error(`RoadGoat API error: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data.data.map((place: any) => ({
-      id: place.id,
+    return defaultImages.map((url, index) => ({
+      id: index,
       urls: {
-        small: place.attributes.photos[0]?.image?.thumbnail,
-        regular: place.attributes.photos[0]?.image?.large
+        small: url,
+        regular: url
       },
-      alt_description: `${capital} - ${place.attributes.name}`
-    })).filter((img: any) => img.urls.small && img.urls.regular);
+      alt_description: `Travel destination ${index + 1}`
+    }));
   } catch (error) {
-    console.error('Failed to fetch images:', error);
+    console.error('Failed to load images:', error);
     return [];
   }
 }
